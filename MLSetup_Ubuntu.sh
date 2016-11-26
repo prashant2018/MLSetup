@@ -31,7 +31,6 @@ yes | sudo pip install seaborn || flag=1
 #scikit-learn
 yes | sudo pip install -U scikit-learn || flag=1
 
-#yes | sudo pip install nose || flag=1
 
 if [ $flag == 1 ]
 then
