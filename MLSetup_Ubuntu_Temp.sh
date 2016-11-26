@@ -10,7 +10,7 @@ sudo pip install --upgrade pip
 #Numpy
 sudo apt-get -y install python-numpy
 #Scipy
-sudo apt-get -y install python-scipy
+sudo apt-get -y install
 
 #Matplotlib
 sudo apt-get -y install python-matplotlib
@@ -29,3 +29,5 @@ yes | sudo pip install seaborn
 
 #scikit-learn
 yes | sudo pip install -U scikit-learn
+
+echo "Done"
