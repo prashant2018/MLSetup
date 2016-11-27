@@ -9,3 +9,4 @@ Just download the scripts and run as :
 sh MLSetup_Ubuntu.sh
 ```
 
+![ML](http://respondr.io/wp-content/uploads/2016/03/machine_learning-1024x724.jpg)
