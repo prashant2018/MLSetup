@@ -10,3 +10,18 @@ Just download the scripts and run as :
 ```bash
 ./MLSetup_Ubuntu.sh
 ```
+
+##Libraries Included
+  * Numpy
+  * Scipy
+  * Matplotlib
+  * Ipython
+  * Ipython-Notebook
+  * Pandas
+  * Seaborn
+  * Scikit-Learn
+
+##Also Included
+  * python-pip
+  * python-dev
+  * build-essential
