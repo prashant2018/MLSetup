@@ -34,7 +34,8 @@ yes | sudo pip install -U scikit-learn || flag=1
 
 if [ $flag == 1 ]
 then
-  echo "--------------- Failed ! Please retry ----------------"
+  echo "------------------------- Note ---------------------------"
+  echo "Some package have not been installed. Please run the script again. Already downloaded packages will not be downloaded again.
   exit
 fi
 
