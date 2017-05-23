@@ -25,3 +25,5 @@ Simple script to get started with machine learning.
   * python-pip
   * python-dev
   * build-essential
+
+## Enjoy Machine Learning
