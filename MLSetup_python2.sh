@@ -16,11 +16,8 @@ sudo apt-get -y install python-scipy || flag=1
 #Matplotlib
 sudo apt-get -y install python-matplotlib || flag=1
 
-#Ipython
-sudo apt-get -y install ipython || flag=1
-
-#Ipython-Notebook
-sudo apt-get -y install ipython-notebook || flag=1
+#Jupyter-Notebook
+sudo pip install jupyter || flag=1
 
 #Pandas
 sudo apt-get -y install python-pandas || flag=1
