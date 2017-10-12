@@ -1,39 +1,167 @@
 #!/bin/bash
 
-flag=0 #checks for error during installation
+### Update repositories
+sudo apt-get -y update
 
-sudo apt-get -y update && sudo apt-get update -y upgrade
+function essential(){
+  ### Update repositories
+  sudo apt-get -y update
 
-sudo apt-get -y install python-pip python-dev build-essential || flag=1
-sudo pip install --upgrade pip || flag=1
+  ### Install essential packages
+  sudo apt-get install -y python-pip python-dev build-essential
 
-#Numpy
-sudo apt-get -y install python-numpy || flag=1
+  # Check Essential packages install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install Essential packages, check this!"
+    exit 1
+  fi
+}
 
-#Scipy
-sudo apt-get -y install python-scipy || flag=1
+function numpy() {
+  # Install numpy
+  sudo pip install numpy
 
-#Matplotlib
-sudo apt-get -y install python-matplotlib || flag=1
+  # Check numpy install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install Numpy, check this!"
+    exit 1
+  fi
+}
 
-#Jupyter-Notebook
-sudo pip install jupyter || flag=1
+function scipy() {
+  # Install scipy
+  sudo pip install scipy
 
-#Pandas
-sudo apt-get -y install python-pandas || flag=1
+  # Check scipy install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install Scipy, check this!"
+    exit 1
+  fi
+}
 
-#Seaborn
-yes | sudo pip install seaborn || flag=1
+function matplotlib() {
+  # Install matplotlib
+  sudo pip install matplotlib
 
-#scikit-learn
-yes | sudo pip install -U scikit-learn || flag=1
+  # Check matplotlib install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install Matplotlib, check this!"
+    exit 1
+  fi
+}
 
+function jupyter() {
+  # Install jupyter
+  sudo pip install jupyter
 
-if [ $flag == 1 ]
-then
-  echo "------------------------- Note ---------------------------"
-  echo "Some package have not been installed. Please run the script again. Already downloaded packages will not be downloaded again.
-  exit
-fi
+  # Check jupyter install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install jupyter, check this!"
+    exit 1
+  fi
+}
 
-echo "---------------- Successfull ! ---------------"
+function pandas() {
+  # Install pandas
+  sudo pip install pandas
+
+  # Check pandas install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install pandas, check this!"
+    exit 1
+  fi
+}
+
+function seaborn() {
+  # Install seaborn
+  sudo pip install seaborn
+
+  # Check seaborn install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install seaborn, check this!"
+    exit 1
+  fi
+}
+
+function scikit-learn() {
+  # Install scikit-learn
+  sudo pip install scikit-learn
+
+  # Check scikit-learn install
+  if [ $? = 0 ]; then
+    echo "Installation Successfully"
+  else
+    echo "Problems to install scikit-learn, check this!"
+    exit 1
+  fi
+}
+
+case $1 in
+
+  essential)
+    essential
+    ;;
+
+  numpy)
+    numpy
+    ;;
+
+  scipy)
+    scipy
+    ;;
+
+  matplotlib)
+    matplotlib
+    ;;
+
+  jupyter)
+    jupyter
+    ;;
+
+  pandas)
+    pandas
+    ;;
+
+  seaborn)
+    seaborn
+    ;;
+
+  scikit-learn)
+    scikit-learn
+    ;;
+
+  all)
+    essential
+    numpy
+    scipy
+    matplotlib
+    jupyter
+    pandas
+    seaborn
+    scikit-learn
+    ;;
+
+    *)
+    echo -e '''
+      Usage: MLSetup_python2.sh + Option
+      MLSetup_python2.sh all -> this will install all packages
+      You can install individually packages using: MLSetup_python2.sh pandas
+      or: MLSetup_python2.sh seaborn
+    '''
+    ;;
+
+esac
