@@ -27,8 +27,7 @@ bash MLSetup_python3.sh pandas
   * Numpy
   * Scipy
   * Matplotlib
-  * Ipython
-  * Ipython-Notebook
+  * Jupyter
   * Pandas
   * Seaborn
   * Scikit-Learn
