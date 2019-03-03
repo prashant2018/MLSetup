@@ -17,7 +17,7 @@ bash MLSetup_python3.sh all
 or
 ##### Individually
 ```bash
-#For python3
+#For python2
 bash MLSetup_python2.sh pandas
 #For python3
 bash MLSetup_python3.sh pandas
